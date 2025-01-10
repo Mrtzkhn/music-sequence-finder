@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="container mx-auto p-4">
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="text-center px-6 py-3 border-b border-gray-300 text-gray-700">Name</th>
+            <th class="text-center px-6 py-3 border-b border-gray-300 text-gray-700">Fitness</th>
+            <th class="text-center px-6 py-3 border-b border-gray-300 text-gray-700">sequence</th>
+            <th class="text-center px-6 py-3 border-b border-gray-300 text-gray-700">Audio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for midi_file in midi_files %}
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 border-b border-gray-200 text-center">{{ midi_file.title }}</td>
+              <td class="px-6 py-4 border-b border-gray-200 text-center">{{ midi_file.fitness }}</td>
+              <td class="px-6 py-4 border-b border-gray-200 text-center">{{ midi_file.sequence }}</td>
+              <td class="px-6 py-4 border-b border-gray-200">
+                <button
+                  class="mx-auto bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600
+                  focus:outline-none flex items-center justify-center space-x-2"
+                  onclick="playDirect('{{ midi_file.audio.url }}')">
+                  play
+                </button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

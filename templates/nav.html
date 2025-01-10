@@ -1,0 +1,36 @@
+<nav class="bg-gray-800 px-2">
+  <div class="flex items-center justify-between h-[60px]">
+    <!-- logo -->
+    <div class="flex items-center">
+      <a href="#" class="text-white text-lg font-bold">Music Generator</a>
+    </div>
+
+    <!-- desktop nav -->
+    <div class="hidden md:block">
+      <div class="ml-10 flex items-baseline space-x-4">
+        <a href="{% url 'index' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+      </div>
+    </div>
+
+    <!-- mobile button -->
+    <div class="flex md:hidden">
+      <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+      <svg fill="none" class="w-6 h-6" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path d="m0 0h48v48h-48z" fill="currentColor" fill-opacity=".01"/>
+        <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+          <path d="m7.94977 11.9498h32.00003"/>
+          <path d="m7.94977 23.9498h32.00003"/>
+          <path d="m7.94977 35.9498h32.00003"/>
+        </g>
+      </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile nav -->
+  <div id="mobile-menu" class="hidden md:hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="{% url 'index' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+    </div>
+  </div>
+</nav>
